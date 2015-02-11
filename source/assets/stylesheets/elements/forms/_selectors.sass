@@ -1,0 +1,71 @@
+// /*-----------  Radio & Checkbox  -----------*/
+
+input[type=radio],
+input[type=checkbox]
+  display: none
+
+input[type=radio] + label,
+input[type=checkbox] + label
+  color: $gray
+  cursor: pointer
+  text-align: left
+  font-size: 0.95em
+  position: relative
+  margin-top: 0.25em
+  padding-left: 1.33em
+  @include user-select(none)
+  @include inline-block()
+  @include transition()
+
+  &:before
+    left: 0px
+    width: 14px
+    height: 14px
+    content: ''
+    position: absolute
+    background-color: $white
+    border: 1px solid $grayLight
+    @include transition()
+
+  &:first-of-type
+    margin-top: 0
+
+input[type=radio] + label:hover,
+input[type=radio]:focus + label,
+input[type=checkbox] + label:hover,
+input[type=checkbox]:focus + label
+  color: $grayDark
+
+  &:before
+    border-color: $gray
+
+input[type=radio]:checked + label,
+input[type=checkbox]:checked + label
+  color: $grayDarker
+
+  &:before
+    border-color: $grayDark
+    background-color: $grayDark
+
+/*-----------  Radio  -----------*/
+
+input[type=radio] + label
+
+  &:before
+    top: 4px
+    border-radius: 10em
+
+/*-----------  Checkbox  -----------*/
+
+input[type=checkbox] + label
+
+  &:before
+    top: 3px
+
+  &:after
+    top: 4px
+    left: 2px
+    color: $white
+    font-size: 0.7em
+    position: absolute
+    @include use-icon('\e804')

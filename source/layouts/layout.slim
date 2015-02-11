@@ -1,0 +1,24 @@
+doctype html
+
+html
+  head
+    meta charset='utf-8'
+    meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'
+
+    /! Responsive/Mobile Content Controls
+    meta name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, user-scalable=0'
+
+    title Rifird • Referrals Made Easy
+    link rel="shortcut icon" href="#{image_path('favicon.ico')}" type="image/x-icon"
+
+    script src="//use.typekit.net/zbs5hgu.js"
+    javascript:
+        try{Typekit.load();}catch(e){}
+
+    == stylesheet_link_tag 'rifird'
+
+  body class='#{page_classes}'
+
+    == yield
+
+    == javascript_include_tag 'rifird'    

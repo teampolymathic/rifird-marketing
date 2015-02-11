@@ -1,0 +1,117 @@
+/*-----------  Header  -----------*/
+
+section.header
+  padding-top: 0
+  padding-bottom: 0
+
+  .bounds-wrapper
+  
+    > div:first-child
+      padding: $gutterLg
+      padding-left: 0
+      @include flex(1 0 67%)
+
+      h1
+        @include header-font()
+
+    > div:last-child
+      padding: $gutterLg
+      padding-right: 0
+      padding-bottom: 0
+      @include flex(1 0 33%)
+
+      img
+        width: 100%
+
+/*-----------  Video  -----------*/
+
+section.video
+  color: $white
+  padding-top: 0
+  padding-bottom: 0
+  background-color: $black
+
+  .bounds-wrapper
+    @include align-items(stretch)
+  
+    > div:first-child
+      position: relative
+      @include flex(1 0 67%)
+      @include full-bg()
+
+      .button
+        @include center-align(absolute)
+
+    > div:last-child
+      padding: $gutterLg
+      padding-right: 0
+      @include flex(1 0 33%)
+
+/*-----------  How It Works  -----------*/
+
+section.hiw
+  text-align: center
+
+  .bounds-wrapper
+  
+    > div
+      padding: $gutter
+      @include flex(1 0 33%)
+
+/*-----------  Signup  -----------*/
+
+section#signup
+  color: $white
+  text-align: center
+  background-color: $red
+
+  .bounds-wrapper
+    display: block
+
+    .input-wrapper
+      margin: $gutter auto $gutterSm
+      @include justify-content(center)
+      @include flex-direction(row)
+      @include align-items(center)
+      @include display(flex)
+
+      input
+        margin: 0 0.5em
+        @include flex(0 1 22%)
+
+/*-----------  Call to Action  -----------*/
+
+section.cta
+  color: $white
+  text-align: center
+  padding-top: $gutter
+  padding-bottom: $gutter
+  background-color: $redDark
+
+  .bounds-wrapper
+    display: block
+    position: relative
+
+    .qr-wrapper
+      right: 0
+      @include vertical-align(absolute)
+
+/*-----------  Footer  -----------*/
+
+section.footer
+  color: $white
+  padding-top: $gutterSm
+  padding-bottom: $gutterSm
+  background-color: $black
+
+  .bounds-wrapper
+  
+    > div:first-child
+      @include flex(1 0 67%)
+
+    > div:last-child
+      text-align: right
+      @include flex(1 0 33%)
+
+      a
+        font-size: 1.75em
