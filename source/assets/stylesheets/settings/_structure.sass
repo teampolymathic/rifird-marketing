@@ -1,0 +1,31 @@
+/*-----------  Responsive Breakpoints  -----------*/
+
+$mobileBreak : new-breakpoint(max-width 27em 4)
+$middleBreak : new-breakpoint(max-width 40em 8)
+$tabletBreak : new-breakpoint(max-width 48em 12)
+$largeBreak  : new-breakpoint(max-width 66em 12)
+$bigBreak    : new-breakpoint(max-width 74em 12)
+$hugeBreak   : new-breakpoint(max-width 77.5em 12)
+
+/*-----------  Full Spans  -----------*/
+
+@mixin full-span($padding: $gutterLg $gutter, $overflow: false)
+  width: 100%
+  padding: $padding
+
+  @if $overflow
+    overflow-x: hidden
+
+  @include media($tabletBreak)
+    padding-left: $gutterSm
+    padding-right: $gutterSm
+
+/*-----------  Bounds Wrapping  -----------*/
+
+@mixin bounds-wrapper($padding: 0, $max: $maxWidth)
+  *zoom: 1
+  max-width: $max
+  padding: $padding
+  margin-left: auto
+  margin-right: auto
+  @include clearfix()

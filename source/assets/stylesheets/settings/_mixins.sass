@@ -1,0 +1,75 @@
+/*-----------  Inlin-Block (w/ alignment)  -----------*/  
+
+@mixin inline-block($alignment: middle)
+  display: -moz-inline-stack
+  display: inline-block
+
+  @if $alignment and $alignment != none
+    vertical-align: $alignment
+    *vertical-align: auto
+    *display: inline
+    zoom: 1
+
+/*-----------  Decoration  -----------*/
+
+@mixin full-bg($url: '', $vert-align: center)
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center $vert-align
+  background-image: image-url($url)
+
+/*-----------  Decoration  -----------*/
+
+@mixin striped-bg($bg-color: $grayLighter, $darken-amount: 3%, $stripe-color: darken($bg-color, $darken-amount))
+  background-size: 40px 40px 
+  background-color: $bg-color
+  @include background-image(linear-gradient(-45deg, $stripe-color 25%, transparent 25%, transparent 50%, $stripe-color 50%, $stripe-color 75%, transparent 75%, transparent))
+
+/*-----------  Type Effects  -----------*/
+
+@mixin ellipsis($width: 100%)
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis  
+
+/*-----------  Vertical Alignment  -----------*/
+
+@mixin vertical-align($position: relative)
+  top: 50%
+  position: $position
+  @include transform(translateY(-50%))
+
+/*-----------  Horizontal Alignment  -----------*/
+
+@mixin horizontal-align($position: relative)
+  left: 50%
+  position: $position
+  @include transform(translateX(-50%))
+
+/*-----------  Center Alignment  -----------*/
+
+@mixin center-align($position: relative)
+  top: 50%
+  left: 50%
+  position: $position
+  @include transform(translate(-50%, -50%))
+
+/*-----------  Arrows  -----------*/
+
+@mixin left-arrow($height: 1em, $color: $grayLighter)
+  &:after
+    content: ''
+    width: 0
+    height: 0
+    z-index: 10
+    margin: 0 auto
+    display: block
+    position: absolute
+    left: -$height * 0.9
+    top: calc(50% - #{$height})
+    background-color: transparent
+    border-top: $height solid rgba(255, 255, 255, 0)
+    border-bottom: $height solid rgba(255, 255, 255, 0)
+    border-right: $height solid $color
+    -moz-transform: scale(1.01)
+    @include transition()

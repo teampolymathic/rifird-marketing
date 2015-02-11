@@ -1,0 +1,77 @@
+/*-----------  Fonts  -----------*/
+
+$bodyFontFamily : 'lato', sans-serif
+$bodyFontWeight : 300
+
+$headerFontFamily : 'effra', sans-serif
+$headerFontWeight : 500
+
+/*-----------  Body Font Mixin  -----------*/
+
+@mixin body-font($italic: false)
+  font-style: normal
+  font-family: $bodyFontFamily
+  font-weight: $bodyFontWeight
+
+  @if $italic
+    font-style: italic
+  @else
+    font-style: normal
+
+/*-----------  Header Font Mixin  -----------*/
+
+@mixin header-font($italic: false)
+  font-style: normal
+  font-family: $headerFontFamily
+  font-weight: $headerFontWeight
+
+  @if $italic
+    font-style: italic
+  @else
+    font-style: normal
+
+/*-----------  Weight Corrections  -----------*/
+
+@mixin antialiased($smooth: true)
+  @if $smooth
+    @include prefixer(font-smoothing, antialiased, webkit moz ms o spec)
+  @else
+    @include prefixer(font-smoothing, subpixel-antialiased, webkit moz ms o spec)
+
+/*-----------  Icon Mixin  -----------*/
+
+@mixin use-icon($content: '')
+  content: $content
+  font-family: 'rifird'
+  @include transition()
+
+/*-----------  Icon Fonts  -----------*/
+
+@font-face
+  font-family: 'rifird'
+  src: url('../fonts/rifird.eot?11357114')
+  src: url('../fonts/rifird.eot?11357114#iefix') format("embedded-opentype"), url('../fonts/rifird.woff?11357114') format("woff"), url('../fonts/rifird.ttf?11357114') format("truetype"), url('../fonts/rifird.svg?11357114#rifird') format("svg")
+  font-weight: normal
+  font-style: normal
+
+[class^="icon-"]:before, [class*=" icon-"]:before
+  width: 1em
+  speak: none
+  font-family: "rifird"
+  font-style: normal
+  font-weight: normal
+  text-align: center
+  margin-right: .2em
+  display: inline-block
+  text-decoration: inherit
+
+
+.icon-twitter-circled:before
+  content: '\e800'
+
+/* ''
+
+.icon-facebook-circled:before
+  content: '\e801'
+
+/* ''

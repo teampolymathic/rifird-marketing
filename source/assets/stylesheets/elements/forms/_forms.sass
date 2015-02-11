@@ -1,0 +1,46 @@
+/*-----------  Forms, Fieldsets & Legends  -----------*/
+
+form
+  width: 100%
+
+.form
+  @include outer-container
+
+fieldset
+  border: 0
+  margin: 0
+  padding: 0
+
+/*-----------  Labels  -----------*/
+
+label
+  display: block
+  color: $grayDark
+  text-align: left
+  font-size: 0.95em
+  margin: 1em 0 0.25em
+  @include ellipsis()
+
+label + input,
+label + textarea,
+label + .select-wrapper
+  margin-top: 0 !important
+
+/*-----------  Input Groups  -----------*/
+
+.inline-inputs
+  width: 100%
+  padding: 0 !important
+  @include justify-content(space-between)
+  @include align-items(stretch)
+  @include display(flex)
+
+  input
+    border-right: 0
+    margin: 0 !important
+    @include flex(0 1 100%)
+
+  #{$all-buttons}
+    padding-left: 0
+    padding-right: 0
+    @include flex(1 0 7.25em)
