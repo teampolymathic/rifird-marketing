@@ -39,3 +39,30 @@ $ ->
   $('.modal-wrapper').on 'click touch', ->
     $(@).removeClass('show-modal')
     $(window.player).pauseVideo()
+
+  #-----------  Submit Email to Mailchimp  -----------#
+
+  $('form').on 'submit', (evt) ->
+    evt.preventDefault()
+
+    data = {}
+    for input in $(@).serializeArray()
+      data[input.name] = input.value
+
+    request = 
+      id: 'd6f8a4fca1'
+      apikey: 'a53308723161bb8289f7356314c00976-us10'
+      send_welcome: false
+      email:
+        email      : data.email
+      merge_vars: 
+        name       : data.name
+        phone      : data.phone
+        business   : data.business
+
+    url = "https://us10.api.mailchimp.com/2.0/lists/subscribe.json?" + $.param(request)
+
+    console.log url
+
+    $.ajax({type: 'POST', url: url}).done (response) ->
+      console.log response

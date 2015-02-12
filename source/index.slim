@@ -64,18 +64,20 @@ section.hiw
 
 section#signup
 
-  .bounds-wrapper
+  form.bounds-wrapper
 
     h4 Never miss out on a referral. It’s easy to set up and free to use!
     h6 Fill out the fields below and we’ll be in touch within 48 hours.
 
     .input-wrapper
-      input type='text' placeholder='Full Name'
-      input type='text' placeholder='Busieness Name'
-      input type='email' placeholder='Email Address'
-      input type='tel' placeholder='Phone Number'
+      input type='text'  name='name'     placeholder='Full Name'
+      input type='text'  name='busienss' placeholder='Busieness Name'
+      input type='email' name='email'    placeholder='Email Address'
+      input type='tel'   name='phone'    placeholder='Phone Number'
 
-    a.button.alt Submit
+    button.alt
+      | Submit
+      i.icon-spin
 
 /*-----------  Call To Action  -----------*/
 

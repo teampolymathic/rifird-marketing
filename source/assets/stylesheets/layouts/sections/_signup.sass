@@ -19,6 +19,16 @@ section#signup
         margin: 0 0.5em
         @include flex(0 1 22%)
 
+    button
+
+      i
+        display: none
+
+      &[disbled]
+
+        i
+          @include inline-block()
+
     /*-----------  Middle Break  -----------*/
 
     @include media($middleBreak)
