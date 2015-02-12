@@ -11,14 +11,20 @@ html
     title Rifird • Referrals Made Easy
     link rel="shortcut icon" href="#{image_path('favicon.ico')}" type="image/x-icon"
 
-    script src="//use.typekit.net/zbs5hgu.js"
-    javascript:
-        try{Typekit.load();}catch(e){}
+    script src="//code.jquery.com/jquery-2.1.3.min.js"
+    / script src="//use.typekit.net/zbs5hgu.js"
+    / javascript:
+    /     try{Typekit.load();}catch(e){}
 
     == stylesheet_link_tag 'rifird'
 
   body class='#{page_classes}'
 
     == yield
+
+    .modal-wrapper
+      .modal-block
+        .youtube-wrapper
+            #youtube-block
 
     == javascript_include_tag 'rifird'    

@@ -7,6 +7,10 @@ section.header
   .bounds-wrapper
 
     div
+      .logo-block
+        = image_tag 'logo_sm.png'
+        span Referrals made easy
+
       h1 Generate authentic and immediate referrals.
       p 
         | 84% of people trust referrals from their friends and family. 
@@ -22,7 +26,7 @@ section.video
   .bounds-wrapper
 
     div style="background-image:url(#{image_path('video_sm.jpg')});"
-      a.button.alt Watch our video
+      a.button.alt#modal-link Watch our video
 
     div
       h3 Beyond Loyalty
