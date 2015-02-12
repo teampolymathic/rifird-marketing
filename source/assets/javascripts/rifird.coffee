@@ -44,23 +44,39 @@ $ ->
 
   $('form.bounds-wrapper').on 'submit', (event) ->
     event.preventDefault()
-
-    $('input[type="submit"]').prop('disabled', true)
+    errBlock = $('.error-state').removeClass('error').text('')
 
     formData =
-      u  : 'a73775c281ff7645c2e1c94db'
-      id : 'd6f8a4fca1'
+      u: 'a73775c281ff7645c2e1c94db'
+      id: 'd6f8a4fca1'
+
+    for input in $('form.bounds-wrapper').serializeArray()
+      formData[input.name] = input.value
+
+    $('input', @).prop('disabled', true)
 
     $.ajax
       type: 'POST'
       data: formData
-      dataType: 'json'
+      dataType: 'jsonp'
       crossDomain: true
-      contentType: 'application/json'
-      url: 'http://getrifird.us10.list-manage.com/subscribe/post'
+      url: 'http://getrifird.us10.list-manage.com/subscribe/post-json?c=?'
       
-      success: (data) ->
-        console.log 'good', data
-      
-      error: (data) ->
-        console.log 'bad', data
+      success: (data, text) =>
+        if data.result == 'success'
+          msg = data.msg + ' Thanks!'
+        else
+          msg = data.msg.substring(4)
+          $('input', @).prop('disabled', false)
+
+        errBlock.addClass(data.result).text(msg)
+
+      error: (data, text) =>
+        msg = data.msg.substring(4)
+        $('input', @).prop('disabled', false)
+        errBlock.addClass(data.result).text(msg)
+
+  #-----------  Error Block Removal  -----------#
+
+  $(document).on 'click touch', ->
+    $('.error-state').removeClass('error').removeClass('success').text('')

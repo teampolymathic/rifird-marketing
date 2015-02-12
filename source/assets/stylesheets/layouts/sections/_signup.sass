@@ -7,6 +7,7 @@ section#signup
 
   .bounds-wrapper
     display: block
+    position: relative
 
     .input-wrapper
       margin: $gutter auto $gutterSm
@@ -28,6 +29,29 @@ section#signup
 
         i
           @include inline-block()
+
+
+    .error-state
+      opacity: none
+      pointer-events: none
+      border-radius: $radius
+      @include center-align(absolute)
+      @include antialiased(false)
+      @include transition()
+
+      &.error,
+      &.success
+        opacity: 1
+        background-color: $white
+        box-shadow: 0.5em 0.5em 2em rgba($grayDarker, 0.4)
+
+      &.error
+        color: $red
+        padding: 0.33em 1.25em
+
+      &.success
+        color: green
+        padding: 0.67em 1.25em
 
     /*-----------  Middle Break  -----------*/
 
