@@ -42,27 +42,25 @@ $ ->
 
   #-----------  Submit Email to Mailchimp  -----------#
 
-  $('form').on 'submit', (evt) ->
-    evt.preventDefault()
+  $('form.bounds-wrapper').on 'submit', (event) ->
+    event.preventDefault()
 
-    data = {}
-    for input in $(@).serializeArray()
-      data[input.name] = input.value
+    $('input[type="submit"]').prop('disabled', true)
 
-    request = 
-      id: 'd6f8a4fca1'
-      apikey: 'a53308723161bb8289f7356314c00976-us10'
-      send_welcome: false
-      email:
-        email      : data.email
-      merge_vars: 
-        name       : data.name
-        phone      : data.phone
-        business   : data.business
+    formData =
+      u  : 'a73775c281ff7645c2e1c94db'
+      id : 'd6f8a4fca1'
 
-    url = "https://us10.api.mailchimp.com/2.0/lists/subscribe.json?" + $.param(request)
-
-    console.log url
-
-    $.ajax({type: 'POST', url: url}).done (response) ->
-      console.log response
+    $.ajax
+      type: 'POST'
+      data: formData
+      dataType: 'json'
+      crossDomain: true
+      contentType: 'application/json'
+      url: 'http://getrifird.us10.list-manage.com/subscribe/post'
+      
+      success: (data) ->
+        console.log 'good', data
+      
+      error: (data) ->
+        console.log 'bad', data

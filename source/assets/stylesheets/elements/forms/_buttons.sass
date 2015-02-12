@@ -36,7 +36,7 @@ $all-buttons : assign-inputs('button' '.button' 'input[type="submit"]' 'input[ty
 
   &.disabled
   &[disabled],
-    color: $gray
     cursor: not-allowed
-    border-color: $grayLight
-    background-color: $grayLight
+    background-color: rgba($white, 0.2)
+    @include striped-bg(rgba($white, 0.2))
+    @include animation(barberpole 2s ease-in-out infinite)
