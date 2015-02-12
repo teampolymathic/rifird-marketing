@@ -91,14 +91,20 @@
       ]
     },
     {
+      "uid": "5d2d07f112b8de19f2c0dbfec3e42c05",
+      "css": "spin",
+      "code": 59394,
+      "src": "fontelico"
+    },
+    {
       "uid": "ccf7ed45e7f05a89376f38abaa9d7d13",
-      "css": "twitter-circled",
+      "css": "twitter",
       "code": 59392,
       "src": "mfglabs"
     },
     {
       "uid": "96aafeab29734d1510805687f7695f8f",
-      "css": "facebook-circled",
+      "css": "facebook",
       "code": 59393,
       "src": "mfglabs"
     }
