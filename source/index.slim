@@ -4,11 +4,10 @@ title: Index
 
 /*-----------  Hero  -----------*/
 
-section.hero
-  
+section.hero style="position:relative;z-index:-100"
   .bounds-wrapper
-
-    div style="background-image:url(#{image_path('phone_sm.jpg')});"
+    /div style="background-image:url(#{image_path('phone_sm.jpg')});"
+    div
       .logo-block
         = image_tag 'logo_sm.png'
         span Referrals made easy
@@ -20,12 +19,21 @@ section.hero
         | Make it easy for your customers to spread the word. 
       a.button href='#signup' Sign up for free
 
-    div
-      = image_tag 'phone_sm.jpg'
+    .device-container style="max-width: 450px;margin-bottom:-10em;padding-left:0" data-size-port="300px" data-size-land="600px"
+      .device-mockup data-device="iphone5" data-orientation="portrait" data-color="black"
+        .device
+          .screen
+            .backdrop-block.selected style="background-image:url(#{ image_path('slide_1.png') });"
+            .backdrop-block style="background-image:url(#{ image_path('slide_2.png') });"
+            .backdrop-block style="background-image:url(#{ image_path('slide_3.png') });"
+            .backdrop-block style="background-image:url(#{ image_path('slide_4.png') });"
+           
+          .iphone-button
+
 
 /*-----------  Video  -----------*/
 
-section.video
+section.video style="position:relative;z-index:100"
 
   .bounds-wrapper
 
