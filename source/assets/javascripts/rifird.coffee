@@ -11,7 +11,7 @@ $ ->
 
   #-----------  Open Modal / Start Video  -----------#
 
-  $('#modal-link').on 'click touch', ->
+  $('.modal-link').on 'click touch', ->
     $('.modal-wrapper').addClass('show-modal')
 
     setInterval( ->

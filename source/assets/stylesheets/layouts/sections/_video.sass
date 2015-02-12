@@ -1,0 +1,88 @@
+/*-----------  Video  -----------*/
+
+section.video
+  color: $white
+  padding-top: 0
+  padding-bottom: 0
+  background-color: $black
+  @include media($largeBreak)
+    padding-left: 0
+    padding-right: 0
+
+  .bounds-wrapper
+    @include align-items(stretch)
+  
+    > div:first-child
+      position: relative
+      @include flex(1 0 67%)
+      @include full-bg()
+
+      .button
+        @include center-align(absolute)
+
+    > div:last-child
+      padding: $gutterLg
+      padding-right: 0
+      @include flex(1 0 33%)
+
+      h3
+        margin-bottom: 0.67em
+
+      .button
+        display: none
+
+    /*-----------  Large Break  -----------*/
+
+    @include media($largeBreak)
+      display: block
+      position: relative
+
+      > div:first-child
+        width: 100%
+        padding-bottom: 56.25%
+
+        .button
+          display: none
+
+      > div:last-child
+        padding-left: 0
+        text-align: center
+        max-width: $blockWidth
+        @include center-align(absolute)
+
+        p
+          color: $grayLighter
+          @include antialiased(false)
+
+        .button
+          margin-top: 0.75em
+          @include inline-block()
+
+    /*-----------  Tablet Break  -----------*/
+
+    @include media($tabletBreak)
+
+      > div:last-child
+        width: 100%
+        padding: 0 $gutterLg
+
+    /*-----------  Middle Break  -----------*/
+
+    @include media($middleBreak)
+
+      > div:first-child
+        padding-bottom: 95%
+
+      > div:last-child
+        padding: 0 $gutter
+
+    /*-----------  Mobile Break  -----------*/
+
+    @include media($mobileBreak)
+
+      > div:first-child
+        padding-bottom: 150%
+
+      > div:last-child
+        padding: 0 $gutterSm
+ 

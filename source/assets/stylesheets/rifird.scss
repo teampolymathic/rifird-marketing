@@ -25,5 +25,6 @@
 //-----------  Page Layouts  -----------//
 
 @import 'layouts/common';             // Common Layout Blocks
-@import 'layouts/document';           // Document Layouts
-@import 'layouts/global/*';           // Global Layouts (header, footer, etc)
+@import 'layouts/document';           // Document Layout
+
+@import 'layouts/sections/*';         // Page Secrtions (header, footer, etc)

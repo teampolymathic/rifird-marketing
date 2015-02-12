@@ -1,0 +1,76 @@
+/*-----------  Hero  -----------*/
+
+section.hero
+  padding-top: $gutter
+  padding-bottom: 0
+
+  .bounds-wrapper
+    position: relative
+
+    > div:first-child
+      padding: $gutterLg
+      padding-left: 0
+      background-size: 0%
+      background-repeat: no-repeat
+      background-position: bottom right
+      @include flex(1 0 67%)
+
+      .logo-block
+        top: 0
+        left: 0
+        position: absolute
+
+        img
+          margin-bottom: -1px
+          margin-right: 0.67em
+          vertical-align: baseline
+
+        span
+          color: $gray
+
+      h1
+        @include header-font()
+
+    > div:last-child
+      padding-left: $gutterLg
+      @include flex(1 0 33%)
+
+      img
+        width: 100%   
+
+    /*-----------  Large Break  -----------*/
+
+    @include media($largeBreak)
+      display: block
+
+      > div:first-child
+        background-size: contain
+        @include flex(1 0 100%)
+
+        h1
+          margin-top: 1em
+          padding-right: 29%
+
+        .button
+          margin-bottom: 2.5em
+
+      > div:last-child
+        display: none
+
+    /*-----------  Tablet Break  -----------*/
+
+    @include media($tabletBreak)
+
+      > div:first-child
+        background-size: 0%
+
+        h1
+          padding-right: 0
+
+    /*-----------  Middle Break  -----------*/
+
+    @include media($middleBreak)
+
+      > div:first-child
+        padding-right: 0
+  

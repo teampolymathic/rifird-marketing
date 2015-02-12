@@ -2,7 +2,9 @@
 title: Index
 ---
 
-section.header
+/*-----------  Hero  -----------*/
+
+section.hero
   
   .bounds-wrapper
 
@@ -21,17 +23,21 @@ section.header
     div
       = image_tag 'phone_sm.jpg'
 
+/*-----------  Video  -----------*/
+
 section.video
 
   .bounds-wrapper
 
     div style="background-image:url(#{image_path('video_sm.jpg')});"
-      a.button.alt#modal-link Watch our video
+      a.button.alt.modal-link Watch our video
 
     div
       h3 Beyond Loyalty
       p Unlike a loyalty program, Rifird gives your happy customers an easy way to refer their friends and bring in new business. So don’t just reward someone for walking through the door - grow your company by capitalizing on the power of referral marketing. Membership is free!
-      a.button.alt#modal-link Watch our video
+      a.button.alt.modal-link Watch our video
+
+/*-----------  How It Works  -----------*/
 
 section.hiw
 
@@ -54,6 +60,8 @@ section.hiw
       h4 Sit Back & Relax
       p Your customers do all the work - referring your business to their friends and family through our app. All for free!
 
+/*-----------  Signup  -----------*/
+
 section#signup
 
   .bounds-wrapper
@@ -68,6 +76,8 @@ section#signup
       input type='tel' placeholder='Phone Number'
 
     a.button.alt Submit
+
+/*-----------  Call To Action  -----------*/
 
 / section.cta
 
@@ -84,6 +94,8 @@ section#signup
 
 /         = image_tag 'qr_code_sm.png'
 
+/*-----------  Footer  -----------*/
+
 section.footer
 
   .bounds-wrapper
@@ -98,4 +110,4 @@ section.footer
         i.icon-twitter-circled
 
       a.facebook-link href=""
-        i.icon-facebook-circled        
+        i.icon-facebook-circled

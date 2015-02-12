@@ -1,0 +1,39 @@
+/*-----------  Signup  -----------*/
+
+section#signup
+  color: $white
+  text-align: center
+  background-color: $red
+
+  .bounds-wrapper
+    display: block
+
+    .input-wrapper
+      margin: $gutter auto $gutterSm
+      @include justify-content(center)
+      @include flex-direction(row)
+      @include align-items(center)
+      @include display(flex)
+
+      input
+        margin: 0 0.5em
+        @include flex(0 1 22%)
+
+    /*-----------  Middle Break  -----------*/
+
+    @include media($middleBreak)
+
+      .input-wrapper
+        @include justify-content(inherit)
+        @include flex-wrap(wrap)
+
+        input
+          margin: 1em 0 0 0
+          @include flex(0 1 48%)
+
+    /*-----------  Mobile Break  -----------*/
+
+    @include media($mobileBreak)
+
+      .input-wrapper
+        display: block

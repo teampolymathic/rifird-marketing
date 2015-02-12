@@ -1,0 +1,32 @@
+/*-----------  How It Works  -----------*/
+
+section.hiw
+  text-align: center
+
+  .bounds-wrapper
+  
+    > div
+      padding: $gutter
+      @include flex(1 0 33%)
+
+      img
+        margin-bottom: 1em
+
+    /*-----------  Tablet Break  -----------*/
+
+    @include media($tabletBreak)
+      display: block
+
+      > div
+        max-width: 85%
+        margin: 0 auto
+
+    /*-----------  Middle Break  -----------*/
+
+    @include media($middleBreak)
+
+      > div
+        width: 100%
+        max-width: 100%
+        padding-left: 0
+        padding-right: 0
