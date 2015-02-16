@@ -48,30 +48,45 @@ $headerFontWeight : 500
 /*-----------  Icon Fonts  -----------*/
 
 @font-face
-  font-family: 'rifird'
-  src: url('../fonts/rifird.eot?11357114')
-  src: url('../fonts/rifird.eot?11357114#iefix') format("embedded-opentype"), url('../fonts/rifird.woff?11357114') format("woff"), url('../fonts/rifird.ttf?11357114') format("truetype"), url('../fonts/rifird.svg?11357114#rifird') format("svg")
+  font-family: "rifird"
+  src: url("../fonts/rifird.eot")
+  src: url("../fonts/rifird.eot?#iefix") format("embedded-opentype"), url("../fonts/rifird.woff") format("woff"), url("../fonts/rifird.ttf") format("truetype"), url("../fonts/rifird.svg#rifird") format("svg")
   font-weight: normal
   font-style: normal
+
+[data-icon]:before
+  speak: none
+  line-height: 1
+  font-family: "rifird" !important
+  content: attr(data-icon)
+  font-style: normal !important
+  font-weight: normal !important
+  font-variant: normal !important
+  text-transform: none !important
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
 
 [class^="icon-"]:before, [class*=" icon-"]:before
-  width: 1em
   speak: none
-  font-family: "rifird"
-  font-style: normal
-  font-weight: normal
-  text-align: center
-  margin-right: .2em
-  display: inline-block
-  text-decoration: inherit
+  line-height: 1
+  font-family: "rifird" !important
+  font-style: normal !important
+  font-weight: normal !important
+  font-variant: normal !important
+  text-transform: none !important
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.icon-logo:before
+  content: "d"
 
 .icon-twitter:before
-  content: '\e800'
+  content: "e"
 
 .icon-facebook:before
-  content: '\e801'
+  content: "f"
 
 .icon-spin:before
-  content: '\e802'
+  content: "h"
   margin-right: 0
   @include animation(spin 2s ease-in-out infinite)

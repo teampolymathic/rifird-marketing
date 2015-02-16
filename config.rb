@@ -3,6 +3,7 @@ compass_config do |config|
 end
 
 require 'slim'
+
 activate :livereload
 activate :directory_indexes
 
