@@ -64,7 +64,7 @@ $ ->
       
       success: (data, text) =>
         if data.result == 'success'
-          msg = data.msg + ' Thanks!'
+          msg = 'Thanks! The Rifird Orientation email is on the way. Check your inbox!'
         else
           msg = data.msg.substring(4)
           $('input', @).prop('disabled', false)
