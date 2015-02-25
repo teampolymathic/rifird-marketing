@@ -17,7 +17,7 @@ section.hero style="position:relative"
         | 84% of people trust referrals from their friends and family. 
         br
         | Make it easy for your customers to spread the word. 
-      a.button href='#signup' Sign up for free
+      a.button href='#signup' onClick="_gaq.push(['_trackEvent', 'contact', 'free_sign_up']);" Sign up for free
 
     .device-container style="max-width: 450px;margin-bottom:-13em;padding-left:0" data-size-port="300px" data-size-land="600px"
       .device-mockup data-device="iphone5" data-orientation="portrait" data-color="black"
@@ -38,7 +38,7 @@ section.video style="position:relative;z-index:100"
   .bounds-wrapper
 
     div style="background-image:url(#{image_path('video_sm.jpg')});"
-      a.button.alt.modal-link Watch our video
+      a.button.alt.modal-link onClick="_gaq.push(['_trackEvent', 'video', 'watch_video']);" Watch our video
 
     div
       h3 Beyond Loyalty
@@ -87,7 +87,7 @@ section#signup
       input#mce-EMAIL.required.email name="EMAIL" type="email" value="" placeholder="Email Address" /
       input#mce-PHONE.required name="PHONE" type="text" value="" placeholder="Phone Number" /
 
-    input.button.alt name="subscribe" type="submit" value="Submit"
+    input.button.alt name="subscribe" type="submit" value="Submit" onClick="_gaq.push(['_trackEvent', 'contact', 'merchant_mailing_list']);"
     .error-state
 
 
@@ -116,7 +116,7 @@ section.footer
 
     div
 
-      a href="mailto:info@rifird.com" Contact Us
+      a href="mailto:info@rifird.com" onClick="_gaq.push(['_trackEvent', 'contact', 'send direct email']);" Contact Us
 
     div
 
