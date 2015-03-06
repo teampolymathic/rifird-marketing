@@ -8,6 +8,12 @@
 .bounds-wrapper
   @include bounds-wrapper()
 
+.block-wrapper
+  @include bounds-wrapper($max: $blockWidth)
+
+.compact-wrapper
+  @include bounds-wrapper($max: $smallWidth)
+
 /*-----------  Class Helpers  -----------*/
 
 .hidden

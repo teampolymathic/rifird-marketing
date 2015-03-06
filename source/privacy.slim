@@ -1,0 +1,64 @@
+---
+title: Privacy Policy
+---
+
+/*-----------  Hero  -----------*/
+
+section.hero
+  .bounds-wrapper
+
+    div
+      = link_to 'index.html', :class => 'logo-block' do
+        = image_tag 'logo.svg'
+        span Referrals made easy
+
+    div
+      / Filler to Prevent Hiding on Mobile
+
+/*-----------  Privacy Policy  -----------*/
+
+section.privacy
+  .compact-wrapper
+
+    h1 Privacy Policy
+
+    p Rifird places the utmost importance on the privacy of its clients and other visitors to its website, to be called henceforth “the Site.” Rifird will never sell or license any private content, material containing identifiable information or your likeness to third parties.
+
+    p You must be 18 or older (at day of contract signing) to employ Rifird.
+
+    p Although Rifird may collect data or anonymous information about your habits on the Site, these are only used to improve Rifird’s offerings, marketing and design efforts. Our Site may contain and employ Cookies, which you may choose to disable. Disabling Cookies, however, may lead to reduced functionality of the site and Rifird as a whole.
+
+    p Your personal information will only be shared in accordance with the law, a search warrant or court subpoena. In the event that Rifird is acquired by another company, all assets would be transferred to the parent company, including your data. You would be notified of this change. 
+
+    p Your personal information may be deleted, upon completion of your project, at your request.
+
+    p Terms may be changed at any time, with revisions posted on the Site. The new terms will only apply to the information collected after the date of change.
+
+    p In the event of being assigned a username and/or password, it is your responsibility to keep this information secret and secure. Please notify Rifird immediately if you believe your account information has been compromised, or you suspect unauthorized use of your account.
+
+    p 
+      | For more information about Rifird, please contact 
+      = mail_to 'info@Rifird.com'
+      | .
+
+/*-----------  Signup  -----------*/
+
+section#signup
+
+  form.bounds-wrapper (novalidate)
+
+    h4 Never miss out on a referral. It’s easy to set up and free to use!
+    h6 To begin, please fill out the fields below and click Submit.
+
+    /! real people should not fill this in and expect good things - do not remove this or risk form bot signups
+    div style=("position: absolute; left: -5000px;") 
+      input name="b_a73775c281ff7645c2e1c94db_d6f8a4fca1" tabindex="-1" type="text" value="" /
+
+    .input-wrapper
+      input#mce-NAME.required name="NAME" type="text" value="" placeholder="Full Name" /
+      input#mce-BUSIENESS.required name="BUSINESS" type="text" value="" placeholder="Business Name" /
+      input#mce-EMAIL.required.email name="EMAIL" type="email" value="" placeholder="Email Address" /
+      input#mce-PHONE.required name="PHONE" type="text" value="" placeholder="Phone Number" /
+
+    input.button.alt name="subscribe" type="submit" value="Submit"
+    .error-state      
