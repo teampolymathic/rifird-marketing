@@ -1,1 +1,0 @@
-!function(){NNSB.ShowController=Ember.ArrayController.extend}.call(this);
