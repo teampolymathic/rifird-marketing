@@ -1,0 +1,20 @@
+<div class="shows-list">
+  {{#if model}}
+    
+    {{#each content}}
+      <div class="show">
+        <h4>{{ date }} • {{ time }}</h4>
+        <h3>{{#link-to 'shows.show' id animations="inside:fade"}}{{ title }}{{/link-to}}</h3>
+        <h5>{{ location }}</h5>
+        <small>{{ description }}</small>
+      </div>
+    {{/each}}
+
+  {{else}}
+
+    <h1>Loading...</h1>
+
+  {{/if}}
+</div>
+
+<div class="show-details"></div>
